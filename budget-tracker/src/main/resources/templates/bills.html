@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <title>Review Payments</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script text="text/javascript" src="script.js"></script>
+</head>
+<body>
+<nav th:replace="fragments :: navigation"></nav>
+<select class="div-toggle" data-target=".my-info">
+    <option value="jan" data-show=".jan">January</option>
+    <option value="feb" data-show=".feb">February</option>
+    <option value="mar" data-show=".mar">March</option>
+    <option value="apr" data-show=".apr">April</option>
+    <option value="may" data-show=".may">May</option>
+    <option value="jun" data-show=".jun">June</option>
+    <option value="jul" data-show=".jul">July</option>
+    <option value="aug" data-show=".aug">August</option>
+    <option value="sept" data-show=".sept">September</option>
+    <option value="oct" data-show=".oct">October</option>
+    <option value="nov" data-show=".nov">November</option>
+    <option value="dec" data-show=".dec">December</option>
+</select>
+
+<!--    <table th:each="aBill,iterStat : ${theList}">
+        <form method="post">
+        <tr>
+            <td th:text="${aBill.name}"></td>
+            <td th:text="${aBill.cost}"></td>
+            <td >
+                <ul th:each="aMonth : ${aBill.months}">
+                    <li th:text="${aMonth}"></li>
+                </ul>
+            </td>
+            <td>
+                <input type="hidden" name="aBill" th:value="${iterStat.index}" />
+            </td>
+            <td>
+                <input type="submit" value="X" />
+            </td>
+        </tr>
+        </form>
+    </table>-->
+<table>
+    <tr>
+        <div class="my-info" th:each="janBill : ${janBills}">
+            <td>
+                <div class="jan hide" th:text="${janBill.name}"></div>
+            </td>
+            <td>
+                <div th:text="${janBill.cost}"></div>
+            </td>
+            <td>
+                <div class="jan hide">
+                    <ul th:each="janMonth : ${janBill.months}">
+                        <li th:text="${janMonth}"></li>
+                    </ul>
+                </div>
+            </td>
+        </div>
+    </tr>
+
+    <!--        <tr th:each="janBill, iterStat : ">
+                <td th:text="${janBill.name}"></td>
+                <td th:text="${janBill.cost}"></td>
+                <td >
+                    <ul th:each="janMonth : ${janBill.months}">
+                        <li th:text="${janMonth}"></li>
+                    </ul>
+                </td>
+                <td>
+                    <input type="hidden" name="janBill" th:value="${iterStat.index}" />
+                </td>
+            </tr>-->
+    <div class="my-info" th:each="febBill : ${febBills}">
+        <div class="feb hide" th:text="${febBill.name}"></div>
+        <div class="feb hide" th:text="${febBill.cost}"></div>
+        <!--        <tr class="feb hide" th:each="febBill, iterStat : ${febBills}">
+            <td th:text="${febBill.name}"></td>
+            <td th:text="${febBill.cost}"></td>
+            <td >
+                <ul th:each="febMonth : ${febBill.months}">
+                    <li th:text="${febMonth}"></li>
+                </ul>
+            </td>
+            <td>
+                <input type="hidden" name="febBill" th:value="${iterStat.index}" />
+            </td>
+        </tr>-->
+    </div>
+    <div class="my-info" th:each="marBill : ${marBills}">
+        <div class="mar hide" th:text="${marBill.name}"></div>
+
+        <!--            <tr th:each="marBill, iterStat : ">
+                        <td th:text="${marBill.name}"></td>
+                        <td th:text="${marBill.cost}"></td>
+                        <td >
+                            <ul th:each="marMonth : ${marBill.months}">
+                                <li th:text="${marMonth}"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <input type="hidden" name="marBill" th:value="${iterStat.index}" />
+                        </td>
+                    </tr>-->
+    </div>
+    <div class="my-info" th:each="aprBill : ${aprBills}">
+        <div class="apr hide" th:text="${aprBill.name}"></div><!--            <tr th:each="aprBill, iterStat : ">
+                <td th:text="${aprBill.name}"></td>
+                <td th:text="${aprBill.cost}"></td>
+                <td >
+                    <ul th:each="aprMonth : ${aprBill.months}">
+                        <li th:text="${aprMonth}"></li>
+                    </ul>
+                </td>
+                <td>
+                    <input type="hidden" name="aprBill" th:value="${iterStat.index}" />
+                </td>
+            </tr>-->
+    </div>
+    <div class="my-info" th:each="mayBill : ${mayBills}">
+        <div class="may hide" th:text="${mayBill.name}"></div><!--            <tr th:each="mayBill, iterStat : ">
+                <td th:text="${mayBill.name}"></td>
+                <td th:text="${mayBill.cost}"></td>
+                <td >
+                    <ul th:each="mayMonth : ${mayBill.months}">
+                        <li th:text="${mayMonth}"></li>
+                    </ul>
+                </td>
+                <td>
+                    <input type="hidden" name="mayBill" th:value="${iterStat.index}" />
+                </td>
+            </tr>-->
+    </div>
+    <div class="my-info" th:each="junBill : ${junBills}">
+        <div class="jun hide" th:text="${junBill.name}"></div><!--            <tr th:each="junBill, iterStat : ">
+                <td th:text="${junBill.name}"></td>
+                <td th:text="${junBill.cost}"></td>
+                <td >
+                    <ul th:each="junMonth : ${junBill.months}">
+                        <li th:text="${junMonth}"></li>
+                    </ul>
+                </td>
+                <td>
+                    <input type="hidden" name="junBill" th:value="${iterStat.index}" />
+                </td>
+            </tr>-->
+    </div>
+    <div class="my-info" th:each="julBill : ${julBills}">
+        <div class="jul hide" th:text="${julBill.name}"></div><!--            <tr th:each="julBill, iterStat : ">
+                <td th:text="${julBill.name}"></td>
+                <td th:text="${julBill.cost}"></td>
+                <td >
+                    <ul th:each="julMonth : ${julBill.months}">
+                        <li th:text="${julMonth}"></li>
+                    </ul>
+                </td>
+                <td>
+                    <input type="hidden" name="julBill" th:value="${iterStat.index}" />
+                </td>
+            </tr>-->
+    </div>
+    <div class="my-info" th:each="augBill : ${augBills}">
+        <div class="aug hide" th:text="${augBill.name}"></div><!--            <tr th:each="augBill, iterStat : ">
+                <td th:text="${augBill.name}"></td>
+                <td th:text="${augBill.cost}"></td>
+                <td >
+                    <ul th:each="augMonth : ${augBill.months}">
+                        <li th:text="${augMonth}"></li>
+                    </ul>
+                </td>
+                <td>
+                    <input type="hidden" name="augBill" th:value="${iterStat.index}" />
+                </td>
+            </tr>-->
+    </div>
+    <div class="my-info" th:each="septBill : ${septBills}">
+        <div class="sept hide" th:text="${septBill.name}"></div><!--            <tr th:each="septBill, iterStat : ">
+                <td th:text="${septBill.name}"></td>
+                <td th:text="${septBill.cost}"></td>
+                <td >
+                    <ul th:each="septMonth : ${septBill.months}">
+                        <li th:text="${septMonth}"></li>
+                    </ul>
+                </td>
+                <td>
+                    <input type="hidden" name="septBill" th:value="${iterStat.index}" />
+                </td>
+            </tr>-->
+    </div>
+    <div class="my-info" th:each="octBill : ${octBills}">
+        <div class="oct hide" th:text="${octBill.name}"></div><!--            <tr th:each="octBill, iterStat : ">
+                <td th:text="${octBill.name}"></td>
+                <td th:text="${octBill.cost}"></td>
+                <td >
+                    <ul th:each="octMonth : ${octBill.months}">
+                        <li th:text="${octMonth}"></li>
+                    </ul>
+                </td>
+                <td>
+                    <input type="hidden" name="octBill" th:value="${iterStat.index}" />
+                </td>
+            </tr>-->
+    </div>
+    <div class="my-info" th:each="novBill : ${novBills}">
+        <div class="nov hide" th:text="${novBill.name}"></div><!--            <tr th:each="novBill, iterStat : ">
+                <td th:text="${novBill.name}"></td>
+                <td th:text="${novBill.cost}"></td>
+                <td >
+                    <ul th:each="novMonth : ${novBill.months}">
+                        <li th:text="${novMonth}"></li>
+                    </ul>
+                </td>
+                <td>
+                    <input type="hidden" name="novBill" th:value="${iterStat.index}" />
+                </td>
+            </tr>-->
+    </div>
+    <div class="my-info" th:each="decBill : ${decBills}">
+        <div class="dec hide" th:text="${decBill.name} + '    ' + ${decBill.cost}"></div>
+        <div class="dec hide">
+            <ul th:each="decMonth : ${decBill.months}">
+                <li th:text="${decMonth}"></li>
+            </ul>
+        </div>            <!--            <tr th:each="decBill, iterStat : ">
+                <td th:text="${decBill.name}"></td>
+                <td th:text="${decBill.cost}"></td>
+                <td >
+                    <ul th:each="decMonth : ${decBill.months}">
+                        <li th:text="${decMonth}"></li>
+                    </ul>
+                </td>
+                <td>
+                    <input type="hidden" name="decBill" th:value="${iterStat.index}" />
+                </td>
+            </tr>-->
+    </div>
+</table>
+<script>
+        $(document).on('change', '.div-toggle', function() {
+            var target = $(this).data('target');
+            var show = $("option:selected", this).data('show');
+            $(target).children().addClass('hide');
+            $(show).removeClass('hide');
+        });
+        $(document).ready(function(){
+            $('.div-toggle').trigger('change');
+        });
+    </script>
+</body>
+</html>

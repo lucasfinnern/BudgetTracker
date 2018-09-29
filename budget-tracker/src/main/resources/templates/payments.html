@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Payments</title>
+</head>
+<body>
+<nav th:replace="fragments :: navigation"></nav>
+
+<h1>Add Payments</h1>
+<form method="post">
+    <label for="payNameId">Name: </label><br/>
+    <input type="text" id="payNameId" name="payName" /><br/>
+
+    <label for="payCostId">Cost: </label><br/>
+    <input type="text" id="payCostId" name="payCost" /><br/>
+
+    <H2>Occurrence</H2>
+
+    <input type="checkbox" name="payOccurrence" value="all"/>Every Month<br/>
+    <input type="checkbox" name="payOccurrence" value="jan"/>January<br/>
+    <input type="checkbox" name="payOccurrence" value="feb"/>February<br/>
+    <input type="checkbox" name="payOccurrence" value="mar"/>March<br/>
+    <input type="checkbox" name="payOccurrence" value="apr"/>April<br/>
+    <input type="checkbox" name="payOccurrence" value="may"/>May<br/>
+    <input type="checkbox" name="payOccurrence" value="jun"/>June<br/>
+    <input type="checkbox" name="payOccurrence" value="july"/>July<br/>
+    <input type="checkbox" name="payOccurrence" value="aug"/>August<br/>
+    <input type="checkbox" name="payOccurrence" value="sept"/>September<br/>
+    <input type="checkbox" name="payOccurrence" value="oct"/>October<br/>
+    <input type="checkbox" name="payOccurrence" value="nov"/>November<br/>
+    <input type="checkbox" name="payOccurrence" value="dec"/>December<br/>
+
+    <input type="submit" value="Add Payment"/>
+</form>
+</body>
+</html>

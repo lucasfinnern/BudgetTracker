@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+<nav th:replace="fragments :: navigation"></nav>
+
+<h2>Plan your budgets</h2>
+<form method="post">
+
+    <label for="janBox">January: </label>
+    <input type="text" name="janBudget" id="janBox" th:value="${budgetVal.get('jan')}"/><br/>
+
+    <label for="febBox">February: </label>
+    <input type="text" name="febBudget" id="febBox" th:value="${budgetVal.get('feb')}"/><br/>
+
+    <label for="marBox">March: </label>
+    <input type="text" name="marBudget" id="marBox" th:value="${budgetVal.get('mar')}"/><br/>
+
+    <label for="aprBox">April: </label>
+    <input type="text" name="aprBudget" id="aprBox" th:value="${budgetVal.get('apr')}"/><br/>
+
+    <label for="mayBox">May: </label>
+    <input type="text" name="mayBudget" id="mayBox" th:value="${budgetVal.get('may')}"/><br/>
+
+    <label for="junBox">June: </label>
+    <input type="text" name="junBudget" id="junBox" th:value="${budgetVal.get('jun')}"/><br/>
+
+    <label for="julBox">July: </label>
+    <input type="text" name="julBudget" id="julBox" th:value="${budgetVal.get('jul')}"/><br/>
+
+    <label for="augBox">August: </label>
+    <input type="text" name="augBudget" id="augBox" th:value="${budgetVal.get('aug')}"/><br/>
+
+    <label for="septBox">September: </label>
+    <input type="text" name="septBudget" id="septBox" th:value="${budgetVal.get('sept')}"/><br/>
+
+    <label for="octBox">October: </label>
+    <input type="text" name="octBudget" id="octBox" th:value="${budgetVal.get('oct')}"/><br/>
+
+    <label for="novBox">November: </label>
+    <input type="text" name="novBudget" id="novBox" th:value="${budgetVal.get('nov')}"/><br/>
+
+    <label for="decBox">December: </label>
+    <input type="text" name="decBudget" id="decBox" th:value="${budgetVal.get('dec')}"/><br/>
+
+    <input type="submit" value="Enter Budgets"/>
+</form>
+</body>
+</html>

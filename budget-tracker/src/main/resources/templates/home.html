@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <title>Overview</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script text="text/javascript" src="script.js"></script>
+</head>
+<body>
+<nav th:replace="fragments :: navigation"></nav>
+
+<select class="div-toggle" data-target=".my-info">
+    <option value="jan" data-show=".jan">January</option>
+    <option value="feb" data-show=".feb">February</option>
+    <option value="mar" data-show=".mar">March</option>
+    <option value="apr" data-show=".apr">April</option>
+    <option value="may" data-show=".may">May</option>
+    <option value="jun" data-show=".jun">June</option>
+    <option value="jul" data-show=".jul">July</option>
+    <option value="aug" data-show=".aug">August</option>
+    <option value="sept" data-show=".sept">September</option>
+    <option value="oct" data-show=".oct">October</option>
+    <option value="nov" data-show=".nov">November</option>
+    <option value="dec" data-show=".dec">December</option>
+</select>
+<h2>Monthly Budget</h2>
+<div class="my-info">
+    <div class="jan hide" th:text="${theActualBudget.get('jan')}"></div>
+    <div class="feb hide" th:text="${theActualBudget.get('feb')}"></div>
+    <div class="mar hide" th:text="${theActualBudget.get('mar')}"></div>
+    <div class="apr hide" th:text="${theActualBudget.get('apr')}"></div>
+    <div class="may hide" th:text="${theActualBudget.get('may')}"></div>
+    <div class="jun hide" th:text="${theActualBudget.get('jun')}"></div>
+    <div class="jul hide" th:text="${theActualBudget.get('jul')}"></div>
+    <div class="aug hide" th:text="${theActualBudget.get('aug')}"></div>
+    <div class="sept hide" th:text="${theActualBudget.get('sept')}"></div>
+    <div class="oct hide" th:text="${theActualBudget.get('oct')}"></div>
+    <div class="nov hide" th:text="${theActualBudget.get('nov')}"></div>
+    <div class="dec hide" th:text="${theActualBudget.get('dec')}"></div>
+</div>
+
+
+<h2>Planned Payments: </h2>
+<div class="my-info">
+    <div class="jan hide" th:text="${janBills}"></div>
+    <div class="feb hide" th:text="${febBills}"></div>
+    <div class="mar hide" th:text="${marBills}"></div>
+    <div class="apr hide" th:text="${aprBills}"></div>
+    <div class="may hide" th:text="${mayBills}"></div>
+    <div class="jun hide" th:text="${junBills}"></div>
+    <div class="jul hide" th:text="${julBills}"></div>
+    <div class="aug hide" th:text="${augBills}"></div>
+    <div class="sept hide" th:text="${septBills}"></div>
+    <div class="oct hide" th:text="${octBills}"></div>
+    <div class="nov hide" th:text="${novBills}"></div>
+    <div class="dec hide" th:text="${decBills}"></div>
+</div>
+<h2>Fun Money: </h2>
+<div class="my-info">
+    <div class="jan hide" th:text="${janFun}">
+    </div>
+    <div class="feb hide" th:text="${febFun}">
+    </div>
+    <div class="mar hide" th:text="${marFun}">
+    </div>
+    <div class="apr hide" th:text="${aprFun}">
+    </div>
+    <div class="may hide" th:text="${mayFun}">
+    </div>
+    <div class="jun hide" th:text="${junFun}">
+    </div>
+    <div class="jul hide" th:text="${julFun}">
+    </div>
+    <div class="aug hide" th:text="${augFun}">
+    </div>
+    <div class="sept hide" th:text="${septFun}">
+    </div>
+    <div class="oct hide" th:text="${octFun}">
+    </div>
+    <div class="nov hide" th:text="${novFun}">
+
+    </div>
+    <div class="dec hide" th:text="${decFun}">
+
+    </div>
+</div>
+
+<script>
+        $(document).on('change', '.div-toggle', function() {
+            var target = $(this).data('target');
+            var show = $("option:selected", this).data('show');
+            $(target).children().addClass('hide');
+            $(show).removeClass('hide');
+        });
+        $(document).ready(function(){
+            $('.div-toggle').trigger('change');
+        });
+    </script>
+
+</body>
+</html>
