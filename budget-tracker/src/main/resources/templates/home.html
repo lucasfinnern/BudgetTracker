@@ -25,38 +25,221 @@
     <option value="nov" data-show=".nov">November</option>
     <option value="dec" data-show=".dec">December</option>
 </select>
-<h2>Monthly Budget</h2>
+
+
+<h2>Monthly Budget:</h2>
 <div class="my-info">
     <div class="jan hide" th:text="${theActualBudget.get('jan')}"></div>
+    <div class="jan hide" th:unless="${theActualBudget.get('jan')}">
+        <p>
+            Don't have a budget yet? Add one <a href="/budget">here</a>
+        </p>
+    </div>
     <div class="feb hide" th:text="${theActualBudget.get('feb')}"></div>
+    <div class="feb hide" th:unless="${theActualBudget.get('feb')}">
+        <p>
+            Don't have a budget yet? Add one <a href="/budget">here</a>
+        </p>
+    </div>
     <div class="mar hide" th:text="${theActualBudget.get('mar')}"></div>
+    <div class="mar hide" th:unless="${theActualBudget.get('mar')}">
+        <p>
+            Don't have a budget yet? Add one <a href="/budget">here</a>
+        </p>
+    </div>
     <div class="apr hide" th:text="${theActualBudget.get('apr')}"></div>
+    <div class="apr hide" th:unless="${theActualBudget.get('apr')}">
+        <p>
+            Don't have a budget yet? Add one <a href="/budget">here</a>
+        </p>
+    </div>
     <div class="may hide" th:text="${theActualBudget.get('may')}"></div>
+    <div class="may hide" th:unless="${theActualBudget.get('may')}">
+        <p>
+            Don't have a budget yet? Add one <a href="/budget">here</a>
+        </p>
+    </div>
     <div class="jun hide" th:text="${theActualBudget.get('jun')}"></div>
+    <div class="jun hide" th:unless="${theActualBudget.get('jun')}">
+        <p>
+            Don't have a budget yet? Add one <a href="/budget">here</a>
+        </p>
+    </div>
     <div class="jul hide" th:text="${theActualBudget.get('jul')}"></div>
+    <div class="jul hide" th:unless="${theActualBudget.get('jul')}">
+        <p>
+            Don't have a budget yet? Add one <a href="/budget">here</a>
+        </p>
+    </div>
     <div class="aug hide" th:text="${theActualBudget.get('aug')}"></div>
+    <div class="aug hide" th:unless="${theActualBudget.get('aug')}">
+        <p>
+            Don't have a budget yet? Add one <a href="/budget">here</a>
+        </p>
+    </div>
     <div class="sept hide" th:text="${theActualBudget.get('sept')}"></div>
+    <div class="sept hide" th:unless="${theActualBudget.get('sept')}">
+        <p>
+            Don't have a budget yet? Add one <a href="/budget">here</a>
+        </p>
+    </div>
     <div class="oct hide" th:text="${theActualBudget.get('oct')}"></div>
+    <div class="oct hide" th:unless="${theActualBudget.get('oct')}">
+        <p>
+            Don't have a budget yet? Add one <a href="/budget">here</a>
+        </p>
+    </div>
     <div class="nov hide" th:text="${theActualBudget.get('nov')}"></div>
+    <div class="nov hide" th:unless="${theActualBudget.get('nov')}">
+        <p>
+            Don't have a budget yet? Add one <a href="/budget">here</a>
+        </p>
+    </div>
     <div class="dec hide" th:text="${theActualBudget.get('dec')}"></div>
+    <div class="dec hide" th:unless="${theActualBudget.get('dec')}">
+        <p>
+            Don't have a budget yet? Add one <a href="/budget">here</a>
+        </p>
+    </div>
 </div>
 
 
 <h2>Planned Payments: </h2>
 <div class="my-info">
     <div class="jan hide" th:text="${janBills}"></div>
+    <div class="jan hide">
+        <ul th:each="janName : ${janNames}">
+            <li th:text="${janName.name}"></li>
+        </ul>
+    </div>
+    <div class="jan hide" th:unless="${janBills}">
+        <p>
+            Don't have any payments? Add some <a href="/payments">here</a>
+        </p>
+    </div>
     <div class="feb hide" th:text="${febBills}"></div>
+    <div class="feb hide">
+        <ul th:each="febName : ${febNames}">
+            <li th:text="${febName.name}"></li>
+        </ul>
+    </div>
+    <div class="feb hide" th:unless="${febBills}">
+        <p>
+            Don't have any payments? Add some <a href="/payments">here</a>
+        </p>
+    </div>
     <div class="mar hide" th:text="${marBills}"></div>
+    <div class="mar hide">
+        <ul th:each="marName : ${marNames}">
+            <li th:text="${marName.name}"></li>
+        </ul>
+    </div>
+    <div class="mar hide" th:unless="${marBills}">
+        <p>
+            Don't have any payments? Add some <a href="/payments">here</a>
+        </p>
+    </div>
     <div class="apr hide" th:text="${aprBills}"></div>
+    <div class="apr hide">
+        <ul th:each="aprName : ${aprNames}">
+            <li th:text="${aprName.name}"></li>
+        </ul>
+    </div>
+    <div class="apr hide" th:unless="${aprBills}">
+        <p>
+            Don't have any payments? Add some <a href="/payments">here</a>
+        </p>
+    </div>
     <div class="may hide" th:text="${mayBills}"></div>
+    <div class="may hide">
+        <ul th:each="mayName : ${mayNames}">
+            <li th:text="${mayName.name}"></li>
+        </ul>
+    </div>
+    <div class="may hide" th:unless="${mayBills}">
+        <p>
+            Don't have any payments? Add some <a href="/payments">here</a>
+        </p>
+    </div>
     <div class="jun hide" th:text="${junBills}"></div>
+    <div class="jun hide">
+        <ul th:each="junName : ${junNames}">
+            <li th:text="${junName.name}"></li>
+        </ul>
+    </div>
+    <div class="jun hide" th:unless="${junBills}">
+        <p>
+            Don't have any payments? Add some <a href="/payments">here</a>
+        </p>
+    </div>
     <div class="jul hide" th:text="${julBills}"></div>
+    <div class="jul hide">
+        <ul th:each="julName : ${julNames}">
+            <li th:text="${julName.name}"></li>
+        </ul>
+    </div>
+    <div class="jul hide" th:unless="${julBills}">
+        <p>
+            Don't have any payments? Add some <a href="/payments">here</a>
+        </p>
+    </div>
     <div class="aug hide" th:text="${augBills}"></div>
+    <div class="aug hide">
+        <ul th:each="augName : ${augNames}">
+            <li th:text="${augName.name}"></li>
+        </ul>
+    </div>
+    <div class="aug hide" th:unless="${augBills}">
+        <p>
+            Don't have any payments? Add some <a href="/payments">here</a>
+        </p>
+    </div>
     <div class="sept hide" th:text="${septBills}"></div>
+    <div class="sept hide">
+        <ul th:each="septName : ${septNames}">
+            <li th:text="${septName.name}"></li>
+        </ul>
+    </div>
+    <div class="sept hide" th:unless="${septBills}">
+        <p>
+            Don't have any payments? Add some <a href="/payments">here</a>
+        </p>
+    </div>
     <div class="oct hide" th:text="${octBills}"></div>
+    <div class="oct hide">
+        <ul th:each="octName : ${octNames}">
+            <li th:text="${octName.name}"></li>
+        </ul>
+    </div>
+    <div class="oct hide" th:unless="${octBills}">
+        <p>
+            Don't have any payments? Add some <a href="/payments">here</a>
+        </p>
+    </div>
     <div class="nov hide" th:text="${novBills}"></div>
+    <div class="nov hide">
+        <ul th:each="novName : ${novNames}">
+            <li th:text="${novName.name}"></li>
+        </ul>
+    </div>
+    <div class="nov hide" th:unless="${novBills}">
+        <p>
+            Don't have any payments? Add some <a href="/payments">here</a>
+        </p>
+    </div>
     <div class="dec hide" th:text="${decBills}"></div>
+    <div class="dec hide">
+        <ul th:each="decName : ${decNames}">
+            <li th:text="${decName.name}"></li>
+        </ul>
+    </div>
+    <div class="dec hide" th:unless="${decBills}">
+        <p>
+            Don't have any payments? Add some <a href="/payments">here</a>
+        </p>
+    </div>
 </div>
+
 <h2>Fun Money: </h2>
 <div class="my-info">
     <div class="jan hide" th:text="${janFun}">

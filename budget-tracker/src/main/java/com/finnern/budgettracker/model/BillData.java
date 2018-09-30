@@ -21,7 +21,7 @@ public class BillData {
         billList.remove(theIndex);
     }
 
-    //searches and adds the bills for a given month
+    //searches and sums the bills for a given month
     //search terms must be: jan, feb, mar, apr, may, jun, jul, aug, sept, oct, nov, dec
     public static Integer sumPayments(String monthSearched) {
         Integer sum = 0;
@@ -35,6 +35,7 @@ public class BillData {
     }
 
     //return the payments for a given month
+    //search terms must be: jan, feb, mar, apr, may, jun, jul, aug, sept, oct, nov, dec
     public static ArrayList<PaymentCost> returnMonthlyPayments(ArrayList<PaymentCost> theWholeListOfPayments, String monthSearched) {
         ArrayList<PaymentCost> paymentsForAMonth = new ArrayList<PaymentCost>();
         for (int i = 0; i < theWholeListOfPayments.size(); i++) {

@@ -44,24 +44,15 @@
         </tr>
         </form>
     </table>-->
-<table>
-    <tr>
-        <div class="my-info" th:each="janBill : ${janBills}">
-            <td>
-                <div class="jan hide" th:text="${janBill.name}"></div>
-            </td>
-            <td>
-                <div th:text="${janBill.cost}"></div>
-            </td>
-            <td>
-                <div class="jan hide">
-                    <ul th:each="janMonth : ${janBill.months}">
-                        <li th:text="${janMonth}"></li>
-                    </ul>
-                </div>
-            </td>
+    <div class="my-info" th:each="janBill : ${janBills}">
+        <div class="jan hide" th:text="${janBill.name} + '    ' + ${janBill.cost}"></div>
+        <div class="jan hide">
+            <ul th:each="janMonth : ${janBill.months}">
+                <li th:text="${janMonth}"></li>
+            </ul>
         </div>
-    </tr>
+    </div>
+
 
     <!--        <tr th:each="janBill, iterStat : ">
                 <td th:text="${janBill.name}"></td>
@@ -76,8 +67,12 @@
                 </td>
             </tr>-->
     <div class="my-info" th:each="febBill : ${febBills}">
-        <div class="feb hide" th:text="${febBill.name}"></div>
-        <div class="feb hide" th:text="${febBill.cost}"></div>
+        <div class="feb hide" th:text="${febBill.name} + '    ' + ${febBill.cost}"></div>
+        <div class="feb hide">
+            <ul th:each="febMonth : ${febBill.months}">
+                <li th:text="${febMonth}"></li>
+            </ul>
+        </div>
         <!--        <tr class="feb hide" th:each="febBill, iterStat : ${febBills}">
             <td th:text="${febBill.name}"></td>
             <td th:text="${febBill.cost}"></td>
@@ -92,7 +87,12 @@
         </tr>-->
     </div>
     <div class="my-info" th:each="marBill : ${marBills}">
-        <div class="mar hide" th:text="${marBill.name}"></div>
+        <div class="mar hide" th:text="${marBill.name} + '    ' + ${marBill.cost}"></div>
+        <div class="mar hide">
+            <ul th:each="marMonth : ${marBill.months}">
+                <li th:text="${marMonth}"></li>
+            </ul>
+        </div>
 
         <!--            <tr th:each="marBill, iterStat : ">
                         <td th:text="${marBill.name}"></td>
@@ -108,7 +108,12 @@
                     </tr>-->
     </div>
     <div class="my-info" th:each="aprBill : ${aprBills}">
-        <div class="apr hide" th:text="${aprBill.name}"></div><!--            <tr th:each="aprBill, iterStat : ">
+        <div class="apr hide" th:text="${aprBill.name} + '    ' + ${aprBill.cost}"></div>
+        <div class="apr hide">
+            <ul th:each="aprMonth : ${aprBill.months}">
+                <li th:text="${aprMonth}"></li>
+            </ul>
+        </div><!--            <tr th:each="aprBill, iterStat : ">
                 <td th:text="${aprBill.name}"></td>
                 <td th:text="${aprBill.cost}"></td>
                 <td >
@@ -122,7 +127,12 @@
             </tr>-->
     </div>
     <div class="my-info" th:each="mayBill : ${mayBills}">
-        <div class="may hide" th:text="${mayBill.name}"></div><!--            <tr th:each="mayBill, iterStat : ">
+        <div class="may hide" th:text="${mayBill.name} + '    ' + ${mayBill.cost}"></div>
+        <div class="may hide">
+            <ul th:each="mayMonth : ${mayBill.months}">
+                <li th:text="${mayMonth}"></li>
+            </ul>
+        </div><!--            <tr th:each="mayBill, iterStat : ">
                 <td th:text="${mayBill.name}"></td>
                 <td th:text="${mayBill.cost}"></td>
                 <td >
@@ -136,7 +146,12 @@
             </tr>-->
     </div>
     <div class="my-info" th:each="junBill : ${junBills}">
-        <div class="jun hide" th:text="${junBill.name}"></div><!--            <tr th:each="junBill, iterStat : ">
+        <div class="jun hide" th:text="${junBill.name} + '    ' + ${junBill.cost}"></div>
+        <div class="jun hide">
+            <ul th:each="junMonth : ${junBill.months}">
+                <li th:text="${junMonth}"></li>
+            </ul>
+        </div><!--            <tr th:each="junBill, iterStat : ">
                 <td th:text="${junBill.name}"></td>
                 <td th:text="${junBill.cost}"></td>
                 <td >
@@ -150,7 +165,12 @@
             </tr>-->
     </div>
     <div class="my-info" th:each="julBill : ${julBills}">
-        <div class="jul hide" th:text="${julBill.name}"></div><!--            <tr th:each="julBill, iterStat : ">
+        <div class="jul hide" th:text="${julBill.name} + '    ' + ${julBill.cost}"></div>
+        <div class="jul hide">
+            <ul th:each="julMonth : ${julBill.months}">
+                <li th:text="${julMonth}"></li>
+            </ul>
+        </div><!--            <tr th:each="julBill, iterStat : ">
                 <td th:text="${julBill.name}"></td>
                 <td th:text="${julBill.cost}"></td>
                 <td >
@@ -164,7 +184,12 @@
             </tr>-->
     </div>
     <div class="my-info" th:each="augBill : ${augBills}">
-        <div class="aug hide" th:text="${augBill.name}"></div><!--            <tr th:each="augBill, iterStat : ">
+        <div class="aug hide" th:text="${augBill.name} + '    ' + ${augBill.cost}"></div>
+        <div class="aug hide">
+            <ul th:each="augMonth : ${augBill.months}">
+                <li th:text="${augMonth}"></li>
+            </ul>
+        </div><!--            <tr th:each="augBill, iterStat : ">
                 <td th:text="${augBill.name}"></td>
                 <td th:text="${augBill.cost}"></td>
                 <td >
@@ -178,7 +203,12 @@
             </tr>-->
     </div>
     <div class="my-info" th:each="septBill : ${septBills}">
-        <div class="sept hide" th:text="${septBill.name}"></div><!--            <tr th:each="septBill, iterStat : ">
+        <div class="sept hide" th:text="${septBill.name} + '    ' + ${septBill.cost}"></div>
+        <div class="sept hide">
+            <ul th:each="septMonth : ${septBill.months}">
+                <li th:text="${septMonth}"></li>
+            </ul>
+        </div><!--            <tr th:each="septBill, iterStat : ">
                 <td th:text="${septBill.name}"></td>
                 <td th:text="${septBill.cost}"></td>
                 <td >
@@ -192,7 +222,12 @@
             </tr>-->
     </div>
     <div class="my-info" th:each="octBill : ${octBills}">
-        <div class="oct hide" th:text="${octBill.name}"></div><!--            <tr th:each="octBill, iterStat : ">
+        <div class="oct hide" th:text="${octBill.name} + '    ' + ${octBill.cost}"></div>
+        <div class="oct hide">
+            <ul th:each="octMonth : ${octBill.months}">
+                <li th:text="${octMonth}"></li>
+            </ul>
+        </div><!--            <tr th:each="octBill, iterStat : ">
                 <td th:text="${octBill.name}"></td>
                 <td th:text="${octBill.cost}"></td>
                 <td >
@@ -206,7 +241,12 @@
             </tr>-->
     </div>
     <div class="my-info" th:each="novBill : ${novBills}">
-        <div class="nov hide" th:text="${novBill.name}"></div><!--            <tr th:each="novBill, iterStat : ">
+        <div class="nov hide" th:text="${novBill.name} + '    ' + ${novBill.cost}"></div>
+        <div class="nov hide">
+            <ul th:each="novMonth : ${novBill.months}">
+                <li th:text="${novMonth}"></li>
+            </ul>
+        </div><!--            <tr th:each="novBill, iterStat : ">
                 <td th:text="${novBill.name}"></td>
                 <td th:text="${novBill.cost}"></td>
                 <td >
@@ -238,8 +278,7 @@
                 </td>
             </tr>-->
     </div>
-</table>
-<script>
+    <script>
         $(document).on('change', '.div-toggle', function() {
             var target = $(this).data('target');
             var show = $("option:selected", this).data('show');

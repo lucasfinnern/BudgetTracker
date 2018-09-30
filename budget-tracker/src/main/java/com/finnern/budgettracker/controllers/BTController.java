@@ -28,7 +28,7 @@ public class BTController {
         //passes a LinkedHashMap of the monthly budgets
         model.addAttribute("theActualBudget", theMonthlyBudgets);
 
-        //passes all the payments for each individual month
+        //passes all the sum of payments for each individual month
         model.addAttribute("janBills", BillData.sumPayments("jan"));
         model.addAttribute("febBills", BillData.sumPayments("feb"));
         model.addAttribute("marBills", BillData.sumPayments("mar"));
@@ -41,6 +41,21 @@ public class BTController {
         model.addAttribute("octBills", BillData.sumPayments("oct"));
         model.addAttribute("novBills", BillData.sumPayments("nov"));
         model.addAttribute("decBills", BillData.sumPayments("dec"));
+
+        //passes all the payments for a month for specifically the names
+        ArrayList<PaymentCost> paymentList = BillData.returnPayments();
+        model.addAttribute("janNames", BillData.returnMonthlyPayments(paymentList, "jan"));
+        model.addAttribute("febNames", BillData.returnMonthlyPayments(paymentList, "feb"));
+        model.addAttribute("marNames", BillData.returnMonthlyPayments(paymentList, "mar"));
+        model.addAttribute("aprNames", BillData.returnMonthlyPayments(paymentList, "apr"));
+        model.addAttribute("mayNames", BillData.returnMonthlyPayments(paymentList, "may"));
+        model.addAttribute("junNames", BillData.returnMonthlyPayments(paymentList, "jun"));
+        model.addAttribute("julNames", BillData.returnMonthlyPayments(paymentList, "jul"));
+        model.addAttribute("augNames", BillData.returnMonthlyPayments(paymentList, "aug"));
+        model.addAttribute("septNames", BillData.returnMonthlyPayments(paymentList, "sept"));
+        model.addAttribute("octNames", BillData.returnMonthlyPayments(paymentList, "oct"));
+        model.addAttribute("novNames", BillData.returnMonthlyPayments(paymentList, "nov"));
+        model.addAttribute("decNames", BillData.returnMonthlyPayments(paymentList, "dec"));
 
         //calculates and passes the savings for every month
         model.addAttribute("janFun", BillData.subPaymentsFromBudgets(theMonthlyBudgets.get("jan")
@@ -95,21 +110,6 @@ public class BTController {
         BudgetData.putToBudget("oct", PaymentCost.convert(octBudget));
         BudgetData.putToBudget("nov", PaymentCost.convert(novBudget));
         BudgetData.putToBudget("dec", PaymentCost.convert(decBudget));
-//        Integer newFebBudget = PaymentCost.convert(febBudget);
-//        Integer newMarBudget = PaymentCost.convert(marBudget);
-//        Integer newAprBudget = PaymentCost.convert(aprBudget);
-//        Integer newMayBudget = PaymentCost.convert(mayBudget);
-//        Integer newJunBudget = PaymentCost.convert(junBudget);
-//        Integer newJulBudget = PaymentCost.convert(julBudget);
-//        Integer newAugBudget = PaymentCost.convert(augBudget);
-//        Integer newSeptBudget = PaymentCost.convert(septBudget);
-//        Integer newOctBudget = PaymentCost.convert(octBudget);
-//        Integer newNovBudget = PaymentCost.convert(novBudget);
-//        Integer newDecBudget = PaymentCost.convert(decBudget);
-//        BudgetData.addAllBudgets("jan", newJanBudget, "feb", newFebBudget, "mar", newMarBudget
-//        , "apr", newAprBudget, "may", newMayBudget, "jun", newJunBudget, "jul", newJulBudget
-//        , "aug", newAugBudget, "sept", newSeptBudget, "oct", newOctBudget, "nov", newNovBudget
-//        , "dec", newDecBudget);
         model.addAttribute("budgetVal", BudgetData.returnBudgets());
         return "budget";
     }
@@ -146,7 +146,6 @@ public class BTController {
         model.addAttribute("octBills", BillData.returnMonthlyPayments(paymentList, "oct"));
         model.addAttribute("novBills", BillData.returnMonthlyPayments(paymentList, "nov"));
         model.addAttribute("decBills", BillData.returnMonthlyPayments(paymentList, "dec"));
-        /*            model.addAttribute("theList", BillData.returnPayments());*/
         return "bills";
     }
 
