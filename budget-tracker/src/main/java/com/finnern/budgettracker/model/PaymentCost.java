@@ -12,11 +12,17 @@ public class PaymentCost {
 
     private ArrayList<String> months = new ArrayList<>();
 
+    private static int nextIdKey = 0;
+
+    private final int idKey;
+
     //constructors, getters, setters
     public PaymentCost(String name, Integer cost, ArrayList<String> months) {
         this.name = name;
         this.cost = cost;
         this.months = months;
+        this.idKey = nextIdKey;
+        nextIdKey++;
     }
 
     public String getName() {
@@ -41,6 +47,18 @@ public class PaymentCost {
 
     public void setMonths(ArrayList<String> months) {
         this.months = months;
+    }
+
+    public static int getNextIdKey() {
+        return nextIdKey;
+    }
+
+    public static void setNextIdKey(int nextIdKey) {
+        PaymentCost.nextIdKey = nextIdKey;
+    }
+
+    public int getIdKey() {
+        return idKey;
     }
 
     //methods

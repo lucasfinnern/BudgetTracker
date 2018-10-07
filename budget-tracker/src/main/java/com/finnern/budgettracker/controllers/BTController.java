@@ -150,9 +150,22 @@ public class BTController {
     }
 
     @RequestMapping(value = "bills", method = RequestMethod.POST)
-    public String removePayment(@RequestParam int aBill, Model model) {
-        BillData.remove(aBill);
-        model.addAttribute("theList", BillData.returnPayments());
+    public String removePayment(@RequestParam int removedBill, Model model) {
+        int positionOfRemovedBill = BillData.findPositionByIdKey(removedBill);
+        BillData.remove(positionOfRemovedBill);
+        ArrayList<PaymentCost> paymentList = BillData.returnPayments();
+        model.addAttribute("janBills", BillData.returnMonthlyPayments(paymentList, "jan"));
+        model.addAttribute("febBills", BillData.returnMonthlyPayments(paymentList, "feb"));
+        model.addAttribute("marBills", BillData.returnMonthlyPayments(paymentList, "mar"));
+        model.addAttribute("aprBills", BillData.returnMonthlyPayments(paymentList, "apr"));
+        model.addAttribute("mayBills", BillData.returnMonthlyPayments(paymentList, "may"));
+        model.addAttribute("junBills", BillData.returnMonthlyPayments(paymentList, "jun"));
+        model.addAttribute("julBills", BillData.returnMonthlyPayments(paymentList, "jul"));
+        model.addAttribute("augBills", BillData.returnMonthlyPayments(paymentList, "aug"));
+        model.addAttribute("septBills", BillData.returnMonthlyPayments(paymentList, "sept"));
+        model.addAttribute("octBills", BillData.returnMonthlyPayments(paymentList, "oct"));
+        model.addAttribute("novBills", BillData.returnMonthlyPayments(paymentList, "nov"));
+        model.addAttribute("decBills", BillData.returnMonthlyPayments(paymentList, "dec"));
         return "bills";
     }
 }

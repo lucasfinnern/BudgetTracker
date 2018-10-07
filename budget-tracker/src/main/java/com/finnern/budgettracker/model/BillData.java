@@ -53,4 +53,14 @@ public class BillData {
 
         return result;
     }
+
+    public static int findPositionByIdKey(int key) {
+        int position = 0;
+        for (int i = 0; i <billList.size(); i++) {
+            if(billList.get(i).getIdKey() == key) {
+                position = i;
+            }
+        }
+        return position;
+    }
 }

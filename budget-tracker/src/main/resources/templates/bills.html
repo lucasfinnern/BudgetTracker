@@ -51,10 +51,18 @@
                 <li th:text="${janMonth}"></li>
             </ul>
         </div>
+        <div class="jan hide">
+            <form method="post">
+                <input type="hidden" name="removedBill" th:value="${janBill.idKey}" />
+
+                <input type="submit" value="Remove" /><br/>
+            </form>
+        </div>
+
     </div>
 
 
-    <!--        <tr th:each="janBill, iterStat : ">
+    <!--        <tr th:each="janBill : ">
                 <td th:text="${janBill.name}"></td>
                 <td th:text="${janBill.cost}"></td>
                 <td >
@@ -72,6 +80,13 @@
             <ul th:each="febMonth : ${febBill.months}">
                 <li th:text="${febMonth}"></li>
             </ul>
+        </div>
+        <div class="feb hide">
+            <form method="post">
+                <input type="hidden" name="removedBill" th:value="${febBill.idKey}" />
+
+                <input type="submit" value="Remove" /><br/>
+            </form>
         </div>
         <!--        <tr class="feb hide" th:each="febBill, iterStat : ${febBills}">
             <td th:text="${febBill.name}"></td>
@@ -93,6 +108,13 @@
                 <li th:text="${marMonth}"></li>
             </ul>
         </div>
+        <div class="mar hide">
+            <form method="post">
+                <input type="hidden" name="removedBill" th:value="${marBill.idKey}" />
+
+                <input type="submit" value="Remove" /><br/>
+            </form>
+        </div>
 
         <!--            <tr th:each="marBill, iterStat : ">
                         <td th:text="${marBill.name}"></td>
@@ -113,7 +135,15 @@
             <ul th:each="aprMonth : ${aprBill.months}">
                 <li th:text="${aprMonth}"></li>
             </ul>
-        </div><!--            <tr th:each="aprBill, iterStat : ">
+        </div>
+        <div class="apr hide">
+            <form method="post">
+                <input type="hidden" name="removedBill" th:value="${aprBill.idKey}" />
+
+                <input type="submit" value="Remove" /><br/>
+            </form>
+        </div>
+        <!--            <tr th:each="aprBill, iterStat : ">
                 <td th:text="${aprBill.name}"></td>
                 <td th:text="${aprBill.cost}"></td>
                 <td >
@@ -132,7 +162,15 @@
             <ul th:each="mayMonth : ${mayBill.months}">
                 <li th:text="${mayMonth}"></li>
             </ul>
-        </div><!--            <tr th:each="mayBill, iterStat : ">
+        </div>
+        <div class="may hide">
+            <form method="post">
+                <input type="hidden" name="removedBill" th:value="${mayBill.idKey}" />
+
+                <input type="submit" value="Remove" /><br/>
+            </form>
+        </div>
+        <!--            <tr th:each="mayBill, iterStat : ">
                 <td th:text="${mayBill.name}"></td>
                 <td th:text="${mayBill.cost}"></td>
                 <td >
@@ -151,7 +189,15 @@
             <ul th:each="junMonth : ${junBill.months}">
                 <li th:text="${junMonth}"></li>
             </ul>
-        </div><!--            <tr th:each="junBill, iterStat : ">
+        </div>
+        <div class="jun hide">
+            <form method="post">
+                <input type="hidden" name="removedBill" th:value="${junBill.idKey}" />
+
+                <input type="submit" value="Remove" /><br/>
+            </form>
+        </div>
+        <!--            <tr th:each="junBill, iterStat : ">
                 <td th:text="${junBill.name}"></td>
                 <td th:text="${junBill.cost}"></td>
                 <td >
@@ -170,7 +216,15 @@
             <ul th:each="julMonth : ${julBill.months}">
                 <li th:text="${julMonth}"></li>
             </ul>
-        </div><!--            <tr th:each="julBill, iterStat : ">
+        </div>
+        <div class="jul hide">
+            <form method="post">
+                <input type="hidden" name="removedBill" th:value="${julBill.idKey}" />
+
+                <input type="submit" value="Remove" /><br/>
+            </form>
+        </div>
+        <!--            <tr th:each="julBill, iterStat : ">
                 <td th:text="${julBill.name}"></td>
                 <td th:text="${julBill.cost}"></td>
                 <td >
@@ -189,7 +243,15 @@
             <ul th:each="augMonth : ${augBill.months}">
                 <li th:text="${augMonth}"></li>
             </ul>
-        </div><!--            <tr th:each="augBill, iterStat : ">
+        </div>
+        <div class="aug hide">
+            <form method="post">
+                <input type="hidden" name="removedBill" th:value="${augBill.idKey}" />
+
+                <input type="submit" value="Remove" /><br/>
+            </form>
+        </div>
+        <!--            <tr th:each="augBill, iterStat : ">
                 <td th:text="${augBill.name}"></td>
                 <td th:text="${augBill.cost}"></td>
                 <td >
@@ -208,7 +270,15 @@
             <ul th:each="septMonth : ${septBill.months}">
                 <li th:text="${septMonth}"></li>
             </ul>
-        </div><!--            <tr th:each="septBill, iterStat : ">
+        </div>
+        <div class="sept hide">
+            <form method="post">
+                <input type="hidden" name="removedBill" th:value="${septBill.idKey}" />
+
+                <input type="submit" value="Remove" /><br/>
+            </form>
+        </div>
+        <!--            <tr th:each="septBill, iterStat : ">
                 <td th:text="${septBill.name}"></td>
                 <td th:text="${septBill.cost}"></td>
                 <td >
@@ -227,7 +297,15 @@
             <ul th:each="octMonth : ${octBill.months}">
                 <li th:text="${octMonth}"></li>
             </ul>
-        </div><!--            <tr th:each="octBill, iterStat : ">
+        </div>
+        <div class="oct hide">
+            <form method="post">
+                <input type="hidden" name="removedBill" th:value="${octBill.idKey}" />
+
+                <input type="submit" value="Remove" /><br/>
+            </form>
+        </div>
+        <!--            <tr th:each="octBill, iterStat : ">
                 <td th:text="${octBill.name}"></td>
                 <td th:text="${octBill.cost}"></td>
                 <td >
@@ -246,7 +324,15 @@
             <ul th:each="novMonth : ${novBill.months}">
                 <li th:text="${novMonth}"></li>
             </ul>
-        </div><!--            <tr th:each="novBill, iterStat : ">
+        </div>
+        <div class="nov hide">
+            <form method="post">
+                <input type="hidden" name="removedBill" th:value="${novBill.idKey}" />
+
+                <input type="submit" value="Remove" /><br/>
+            </form>
+        </div>
+        <!--            <tr th:each="novBill, iterStat : ">
                 <td th:text="${novBill.name}"></td>
                 <td th:text="${novBill.cost}"></td>
                 <td >
@@ -265,7 +351,15 @@
             <ul th:each="decMonth : ${decBill.months}">
                 <li th:text="${decMonth}"></li>
             </ul>
-        </div>            <!--            <tr th:each="decBill, iterStat : ">
+        </div>
+        <div class="dec hide">
+            <form method="post">
+                <input type="hidden" name="removedBill" th:value="${decBill.idKey}" />
+
+                <input type="submit" value="Remove" /><br/>
+            </form>
+        </div>
+        <!--            <tr th:each="decBill, iterStat : ">
                 <td th:text="${decBill.name}"></td>
                 <td th:text="${decBill.cost}"></td>
                 <td >
